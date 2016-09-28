@@ -5,6 +5,53 @@
 Experiment into 2nd screen player for Plex protocol on single board
 computers like RPi. Build instructions https://github.com/dz0ny/champ/wiki/Building-for-RPi
 
+## Developing
+
+1. Install local build of mpv and ffmpeg (https://github.com/mpv-player/mpv-build#instructions-for-debian-and-ubuntu) and install MPV shared library to /.
+2. Set HOPATH to root of the project or use gobu
+3. make
+
+### ffmpeg_options
+```
+--enable-pic
+--enable-gpl
+--enable-libfreetype
+--enable-libmp3lame
+--enable-libopus
+--enable-libtheora
+--enable-libvorbis
+--enable-libvpx
+--enable-gnutls
+--enable-libx264
+--enable-libx265
+--enable-nonfree
+--disable-encoders
+--disable-muxers
+--disable-indevs
+--disable-ffplay
+--disable-ffprobe
+--disable-ffmpeg
+--disable-ffserver
+--disable-debug
+--disable-doc
+```
+
+### mpv_options
+```
+--prefix=/
+--enable-libmpv-shared
+--disable-tv
+--disable-dvbin
+--disable-libbluray
+--disable-dvdread
+--disable-cdda
+--disable-cplayer
+--disable-debug-build
+--disable-manpage-build
+--disable-html-build
+--disable-pdf-build
+```
+
 ## Install
 
 App is packaged with snap and published in app store and under https://github.com/dz0ny/champ/releases
