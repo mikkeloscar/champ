@@ -7,7 +7,7 @@ computers like RPi. Build instructions https://github.com/dz0ny/champ/wiki/Build
 
 ## Developing
 
-1. Install local build of mpv and ffmpeg (https://github.com/mpv-player/mpv-build#instructions-for-debian-and-ubuntu) and install MPV shared library to /.
+1. Install local build of mpv and ffmpeg (https://github.com/mpv-player/mpv-build#instructions-for-debian-and-ubuntu) and use  ffmpeg_options and mpv_options specified below.
 2. Set HOPATH to root of the project or use gobu
 3. make
 
