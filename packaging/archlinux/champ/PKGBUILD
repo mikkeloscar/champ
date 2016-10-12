@@ -1,0 +1,29 @@
+pkgname=champ
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Plex player for RPi"
+arch=('i686' 'x86_64' 'armv6h')
+url="https://github.com/dz0ny/champ"
+license=('MIT')
+makedepends=('go')
+depends=('ffmpeg' 'mpv')
+source=("https://github.com/dz0ny/champ/archive/v${pkgver}.tar.gz")
+sha1sums=('36a3a6a233ff14b08f0040ba6bd7b3bdbf8faf65')
+
+prepare() {
+  cd $srcdir/$pkgname-$pkgver
+  GOPATH="$(pwd)" make setup
+}
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  GOPATH="$(pwd)" make build
+}
+
+package() {
+  cd $srcdir/$pkgname-$pkgver
+  install -Dm755 bin/champ $pkgdir/usr/bin/champ
+  install -Dm755 bin/spinwheel $pkgdir/usr/bin/spinwheel
+}
+
+# vim:set ts=2 sw=2 ft=sh et:
